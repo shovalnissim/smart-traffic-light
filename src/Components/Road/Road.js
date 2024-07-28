@@ -8,7 +8,6 @@ const Road = ({ cars, direction, light, trafficService, isCarCrossing }) => {
     const [carDriving, setCarDriving] = useState(false);
 
     useEffect(() => {
-
         if (light === GREEN_LIGHT && cars > 0 && !isCarCrossing) {
             setCarDriving(true);
             trafficService.removeCar(direction);
@@ -19,7 +18,6 @@ const Road = ({ cars, direction, light, trafficService, isCarCrossing }) => {
                 trafficService.setCarCrossingState(false);
             }, 2000);
         };
-
 
     }, [light, cars, direction, trafficService, isCarCrossing]);
 
